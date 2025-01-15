@@ -16,5 +16,4 @@ outputs:
 run:
   path: bash
   args:
-    - c
     - ./my-repo/task.sh
