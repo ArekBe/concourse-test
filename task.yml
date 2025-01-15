@@ -14,4 +14,7 @@ outputs:
   - name: build-output
 
 run:
-  path: bash ./my-repo/task.sh
+  path: bash
+  args:
+    - c
+    - ./my-repo/task.sh
