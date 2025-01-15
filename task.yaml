@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: ubuntu
+    tag: "20.04"
+
+inputs:
+  - name: my-repo
+
+outputs:
+  - name: build-output
+
+run:
+  path: ./my-repo/task.sh
