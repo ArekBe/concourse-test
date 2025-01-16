@@ -1,3 +1,3 @@
-#!/bin/bash
-echo "Hello from Concourse!" >> output.txt
-echo "2 ello from Concourse!"
+
+echo "Hello from Concourse!" >> build-output/output.txt
+cat build-output/output.txt

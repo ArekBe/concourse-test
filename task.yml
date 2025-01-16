@@ -11,12 +11,11 @@ inputs:
   - name: my-repo
 
 
+    
+outputs:
+  - name: build-output
 
 run:
   path: bash
   args:
     - ./my-repo/task.sh
-
-    
-outputs:
-  - name: build-output
