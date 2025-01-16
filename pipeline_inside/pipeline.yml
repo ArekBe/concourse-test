@@ -1,0 +1,22 @@
+---
+resources:
+  - name: my-repo
+    type: git
+    source:
+      uri: https://github.com/ArekBe/concourse-test.git
+      branch: main
+
+jobs:
+  - name: run-script
+    plan:
+      - get: my-repo
+        trigger: true
+
+      - task: create-file
+        file: my-repo/task.yml
+        params:
+          OUTPUT_FILE: build-output/output.txt
+
+      - task: consume-and-append
+        file: my-repo/task-consume.yml
+
