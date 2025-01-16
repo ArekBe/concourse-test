@@ -1,0 +1,23 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: busybox
+
+inputs:
+  - name: build-output
+
+outputs:
+  - name: shared-output-updated
+
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      echo "Line 2: Appended by Concourse!" >> build-output/output.txt
+      cp shared-output/output.txt shared-output-updated/output.txt
+      echo "Updated file content:"
+      cat shared-output-updated/output.txt
