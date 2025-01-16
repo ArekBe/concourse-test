@@ -19,5 +19,5 @@ run:
     - |
       echo "Line 2: Appended by Concourse!" >> build-output/output.txt
       cp build-output/output.txt shared-output-updated/output.txt
-      echo "Updated file content:"
+      echo "Updated file content:\n\n"
       cat shared-output-updated/output.txt
